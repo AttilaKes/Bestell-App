@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Pizza">
+  <title>Pizza</title>
+  <g stroke="#301914" stroke-width="3.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 27C25 17 43 14 58 23L45 60c-.8 2.2-3.4 2.9-5 1.1L15 27Z" fill="#ffb752"/>
+    <path d="m18 31 24 29c1 1.2 2.2.8 2.7-.7l11-32.4c-12.7-8-27.8-4.2-37.7 4.1Z" fill="#ffd876" stroke="none"/>
+    <path d="M12 27c10.5-12.6 32.7-17.5 47.5-7.1 1.6 1.2 1.9 3.5.7 5.1-1.2 1.5-3.3 1.8-4.9.7-12.2-8.1-28.6-3.8-38 6.4a3.7 3.7 0 0 1-5.1.3 3.8 3.8 0 0 1-.2-5.4Z" fill="#e96b28"/>
+    <path d="M18 26c7.6-6.3 21.2-11.3 33.1-7.8" fill="none" stroke="#ffb752" stroke-width="2.1"/>
+    <circle cx="35" cy="32" r="4.4" fill="#d84e35" stroke-width="2.25"/>
+    <circle cx="45.2" cy="43.1" r="4.1" fill="#d84e35" stroke-width="2.25"/>
+    <path d="M33.4 42.8c4.2-.3 6.4 2.7 5.6 5.5-3.1.4-5.7-1.7-5.6-5.5Z" fill="#58804c" stroke-width="1.65"/>
+    <path d="M46 29.3h.1m-3.8 22.8h.1" stroke-width="2"/>
+  </g>
+</svg>

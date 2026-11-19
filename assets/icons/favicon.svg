@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="BurgerHouse Favicon">
+  <title>BurgerHouse Favicon</title>
+  <circle cx="36" cy="36" r="35" fill="#fff3da"/>
+  <circle cx="36" cy="36" r="31" fill="#ffb752" stroke="#301914" stroke-width="2"/>
+  <g transform="translate(5 5) scale(.86)">
+    <path d="M15.5 44h41v5.5a6 6 0 0 1-6 6h-29a6 6 0 0 1-6-6Z" fill="#e96b28" stroke="#301914" stroke-width="3.4" stroke-linejoin="round"/>
+    <path d="M15.5 36.6c5.8-3.2 9.5 1.9 14.2 1.9 5.1 0 7.4-3.1 11-1.9 6.1 2 8.9 2.1 14.7-.2 2.3-.9 4.1.1 4.4 2.5.5 3.8-3 7.1-6.6 7.1H18.8c-3.7 0-6.5-2.8-6.5-6.2 0-1.5 1.2-2.3 3.2-3.2Z" fill="#58804c" stroke="#301914" stroke-width="3.4"/>
+    <path d="M15.6 30.5c2.1-8.9 10.3-16 20.4-16s18.3 7.1 20.4 16c.6 2.5-1.2 4.5-3.7 4.5H19.3c-2.5 0-4.3-2-3.7-4.5Z" fill="#e96b28" stroke="#301914" stroke-width="3.4"/>
+    <path d="m27.9 26.5 1.5-1.1m11.9-1.1 1.8 1.1" stroke="#fff3da" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
