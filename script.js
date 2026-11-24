@@ -67,7 +67,7 @@ function renderBasketItems(basketId) {
 
     for (let indexMeal = 0; indexMeal < meals.length; indexMeal++) {
         if (meals[indexMeal].amount > 0) {
-            itemsHTML += getBasketItemTemplate(indexMeal);
+            itemsHTML += getBasketItemTemplate(indexMeal, basketId);
         }
     }
 
@@ -100,6 +100,26 @@ function addToBasket(indexMeal) {
     updateMeal(indexMeal);
 }
 
+/** Erhöht die Anzahl eines Gerichts im Warenkorb. */
+function increaseAmount(indexMeal, basketId) {
+    addToBasket(indexMeal);
+    document.getElementById(`${basketId}_increase_${indexMeal}`).focus();
+}
+
+/** Verringert die Anzahl. Ist das Minus danach ausgeblendet, bleibt der Fokus beim Plus. */
+function decreaseAmount(indexMeal, basketId) {
+    meals[indexMeal].amount--;
+    updateMeal(indexMeal);
+    document.getElementById(`${basketId}_increase_${indexMeal}`).focus();
+    document.getElementById(`${basketId}_decrease_${indexMeal}`).focus();
+}
+
+/** Entfernt ein Gericht komplett aus dem Warenkorb. */
+function removeFromBasket(indexMeal) {
+    meals[indexMeal].amount = 0;
+    updateMeal(indexMeal);
+}
+
 /** Aktualisiert alles, was von der Anzahl eines Gerichts abhängt. */
 function updateMeal(indexMeal) {
     updateMealButton(indexMeal);
@@ -116,6 +136,24 @@ function updateMealButton(indexMeal) {
     } else {
         BUTTON_REF.innerText = "In den Warenkorb";
         BUTTON_REF.classList.remove("added");
+    }
+}
+
+/** Gibt "d_none" zurück, wenn das Gericht nur einmal im Warenkorb liegt. */
+function hideIfSingle(indexMeal) {
+    if (meals[indexMeal].amount === 1) {
+        return "d_none";
+    } else {
+        return "";
+    }
+}
+
+/** Gibt "d_none" zurück, wenn das Gericht mehrmals im Warenkorb liegt. */
+function hideIfMultiple(indexMeal) {
+    if (meals[indexMeal].amount > 1) {
+        return "d_none";
+    } else {
+        return "";
     }
 }
 

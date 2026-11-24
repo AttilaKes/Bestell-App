@@ -90,3 +90,67 @@ function getBasketSumsTemplate(subtotal, total) {
         </p>
     `;
 }
+
+/** Gibt ein Gericht im Warenkorb zurück. */
+function getBasketItemTemplate(indexMeal, basketId) {
+    return `
+        <li class="basket_item">
+            <div class="basket_item_row">
+                <h3>${meals[indexMeal].amount} x ${meals[indexMeal].name}</h3>
+                ${getTrashButtonTemplate(indexMeal, hideIfSingle(indexMeal))}
+            </div>
+            <div class="basket_item_row">
+                <div class="basket_amount">
+                    ${getTrashButtonTemplate(indexMeal, hideIfMultiple(indexMeal))}
+                    ${getMinusButtonTemplate(indexMeal, basketId)}
+                    <span>${meals[indexMeal].amount}</span>
+                    ${getPlusButtonTemplate(indexMeal, basketId)}
+                </div>
+                <p class="price">${formatPrice(getMealSum(indexMeal))}</p>
+            </div>
+        </li>
+    `;
+}
+
+/** Gibt den Mülleimer-Button zurück. */
+function getTrashButtonTemplate(indexMeal, hiddenClass) {
+    return `
+        <button
+            class="basket_button ${hiddenClass}"
+            onclick="removeFromBasket(${indexMeal})"
+        >
+            <img
+                src="./assets/icons/delete.svg"
+                alt="${meals[indexMeal].name} aus dem Warenkorb entfernen"
+            />
+        </button>
+    `;
+}
+
+/** Gibt den Minus-Button zurück. */
+function getMinusButtonTemplate(indexMeal, basketId) {
+    return `
+        <button
+            id="${basketId}_decrease_${indexMeal}"
+            class="basket_button ${hideIfSingle(indexMeal)}"
+            onclick="decreaseAmount(${indexMeal}, '${basketId}')"
+            aria-label="${meals[indexMeal].name}: Anzahl verringern"
+        >
+            −
+        </button>
+    `;
+}
+
+/** Gibt den Plus-Button zurück. */
+function getPlusButtonTemplate(indexMeal, basketId) {
+    return `
+        <button
+            id="${basketId}_increase_${indexMeal}"
+            class="basket_button"
+            onclick="increaseAmount(${indexMeal}, '${basketId}')"
+            aria-label="${meals[indexMeal].name}: Anzahl erhöhen"
+        >
+            +
+        </button>
+    `;
+}

@@ -100,6 +100,36 @@
     gap: var(--spacing);
 }
 
+.basket_amount {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.basket_amount span {
+    min-width: 3ch;
+    text-align: center;
+}
+
+.basket_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.basket_button.d_none {
+    display: none;
+}
+
+.basket_button:hover {
+    background-color: var(--color-rating);
+}
+
 /* ===== Sums ===== */
 .basket_sums {
     display: flex;
