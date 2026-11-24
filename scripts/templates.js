@@ -68,18 +68,6 @@ function getBasketTemplate(basketId) {
     `;
 }
 
-/** Gibt ein Gericht im Warenkorb zurück. */
-function getBasketItemTemplate(indexMeal) {
-    return `
-        <li class="basket_item">
-            <div class="basket_item_row">
-                <h3>${meals[indexMeal].amount} x ${meals[indexMeal].name}</h3>
-                <p class="price">${formatPrice(getMealSum(indexMeal))}</p>
-            </div>
-        </li>
-    `;
-}
-
 /** Gibt Zwischensumme, Lieferkosten und Gesamtsumme zurück. */
 function getBasketSumsTemplate(subtotal, total) {
     return `
