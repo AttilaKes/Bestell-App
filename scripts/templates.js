@@ -1,3 +1,14 @@
+/** Gibt den Link zu einer Kategorie zurück. */
+function getCategoryLinkTemplate(indexCategory) {
+    return `
+        <li>
+            <a href="#${categories[indexCategory].id}">
+                ${categories[indexCategory].name}
+            </a>
+        </li>
+    `;
+}
+
 /** Gibt eine Kategorie mit Überschrift und leerer Gerichteliste zurück. */
 function getCategoryTemplate(indexCategory) {
     return `

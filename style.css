@@ -110,6 +110,28 @@ main {
     font-weight: 700;
 }
 
+/* ===== Category navigation ===== */
+.category_navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing);
+    padding: var(--spacing-small) var(--spacing);
+}
+
+.category_navigation a {
+    display: block;
+    padding: var(--spacing-small) 20px;
+    border-radius: var(--radius-large);
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--color-card);
+}
+
+.category_navigation a:hover {
+    box-shadow: var(--shadow);
+}
+
 /* ===== Category ===== */
 .category {
     padding-top: calc(var(--headline-overhang) + var(--spacing));

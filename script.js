@@ -1,9 +1,17 @@
-/** Start */
-function init() {}
-
-/** Startet die App: zeigt alle Kategorien mit ihren Gerichten. */
+/** Startet die App: zeigt Kategorien und Gerichte. */
 function init() {
+    renderCategoryLinks();
     renderCategories();
+}
+
+/** Rendert die Links zu allen Kategorien. */
+function renderCategoryLinks() {
+    const LINKS_REF = document.getElementById("category_links");
+    LINKS_REF.innerHTML = "";
+
+    for (let index = 0; index < categories.length; index++) {
+        LINKS_REF.innerHTML += getCategoryLinkTemplate(index);
+    }
 }
 
 /** Rendert alle Kategorien mit ihren Gerichten. */
