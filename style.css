@@ -2,20 +2,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-
-    font-family: Palanquin;
-    color: var(--color-on-primary);
-    background-color: var(--color-on-primary);
+    font-family: "Palanquin", sans-serif;
     font-size: 18px;
-}
-
-img {
-    max-width: 100%;
-}
-
-button {
-    cursor: pointer;
-    font: inherit;
+    line-height: 1.2;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 /* ===== Content limitation ===== */
@@ -23,22 +14,29 @@ button {
     width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: var(--spacing);
+    padding: var(--spacing) var(--content-padding);
 }
 
 /* ========================================
    HEADER
 ======================================== */
 
-header {
+.page_header {
     color: var(--color-on-primary);
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
 }
 
-.bestellapp-logo {
-    width: 254px;
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 128px;
 }
 
+.bestellapp_logo {
+    display: block;
+    width: 160px;
+}
 /* ========================================
    MAIN CONTENT
 ======================================== */
@@ -51,9 +49,33 @@ main {
 ======================================== */
 
 footer {
-    text-align: center;
     color: var(--color-on-primary);
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
+}
+
+.footer_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px 48px;
+    min-height: 128px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer_content a {
+    text-decoration: none;
+}
+
+.footer_content a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
 }
 
 /* ========================================

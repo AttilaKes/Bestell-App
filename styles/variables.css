@@ -1,12 +1,23 @@
 /* ===== Variables ===== */
 :root {
-    --color-background: #e86c1e;
-    --color-card: #ffffff;
-    --color-text: #2b2b2b;
-    --color-primary: #99674e;
+    --color-primary: #e76c1f;
+    --color-primary-dark: #b34b0b;
     --color-on-primary: #ffffff;
-    --radius: 16px;
+    --color-background: #ffffff;
+    --color-card: #fdeadc;
+    --color-rating: #f9cbb0;
+    --color-text: #363534;
+    --color-basket: #363534;
+    --color-on-basket: #fdeadc;
+    --radius: 12px;
+    --radius-basket-item: 20px;
+    --radius-large: 30px;
     --spacing: 16px;
     --spacing-small: 8px;
     --content-width: 1440px;
+    --content-padding: 120px;
+    --basket-width: 435px;
+    --headline-height: 60px;
+    --headline-overhang: 32px;
+    --shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 }

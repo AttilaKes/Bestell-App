@@ -2,5 +2,44 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+html {
     scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary-dark);
+    outline-offset: 2px;
+}
+
+/* ===== Helper classes ===== */
+.d_none {
+    display: none;
+}
+
+.no_scroll {
+    overflow: hidden;
 }

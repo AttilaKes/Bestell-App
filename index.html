@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bestell App</title>
+        <title>BurgerHouse | Bestell-App</title>
         <link rel="icon" href="./assets/icons/favicon.svg" />
 
         <script src="./scripts/templates.js"></script>
@@ -14,39 +14,44 @@
         <link rel="stylesheet" href="./styles/standard.css" />
         <link rel="stylesheet" href="./style.css" />
     </head>
-    <body onload="init()">
-        <header>
-            <div class="content_wrapper">
-                <h1>
-                    <a href="#">
-                        <img
-                            class="bestellapp-logo"
-                            src="./assets/icons/bestellapp_logo.svg"
-                            alt="Bestell App"
-                        />
-                    </a>
-                </h1>
+
+    <body onload="init()" id="page_top">
+        <header class="page_header">
+            <div class="content_wrapper header_content">
+                <a href="./index.html">
+                    <img
+                        class="bestellapp_logo"
+                        src="./assets/icons/bestellapp_logo.svg"
+                        alt="Bestell-App Startseite"
+                    />
+                </a>
+                <!-- placeholder without function, see Figma note -->
+                <img
+                    class="menu_icon"
+                    src="./assets/icons/menu_dummy.svg"
+                    alt=""
+                />
             </div>
         </header>
 
-        <main class="content_wrapper">
-            <!-- rendermeals() renders the meal cards into this container -->
-            <div id="meal_content" class="meal_list"></div>
+        <main>
+            <!-- renderCategories() renders the meals into this container -->
+            <div id="meal_content"></div>
         </main>
 
         <footer>
-            <div class="content_wrapper">
-                <a href="#"
-                    ><p>
-                        <img
-                            src="./assets/icons/copyright.svg"
-                            alt="copyright"
-                            width="14px"
-                        />2025 BurgerHouse
-                    </p></a
-                >
-                <a href="#"><p>Imprint</p></a>
-                <a href="#"><p>Cookie Preferences</p></a>
+            <div class="content_wrapper footer_content">
+                <p class="copyright">
+                    <img
+                        src="./assets/icons/copyright.svg"
+                        alt="Copyright"
+                        width="20"
+                        height="20"
+                    />
+                    2026 BurgerHouse
+                </p>
+                <a href="./impressum.html">Impressum</a>
+                <a href="./impressum.html#cookies">Cookies</a>
             </div>
         </footer>
     </body>
