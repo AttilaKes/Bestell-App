@@ -1,3 +1,4 @@
+const DELIVERY_FEE = 4.99;
 const BASKET_IDS = ["basket_desktop"];
 
 /** Startet die App: zeigt Kategorien, Gerichte und den Warenkorb. */
@@ -53,8 +54,33 @@ function renderBaskets() {
 /** Aktualisiert den Inhalt jedes Warenkorbs. */
 function updateBaskets() {
     for (let index = 0; index < BASKET_IDS.length; index++) {
+        renderBasketItems(BASKET_IDS[index]);
+        renderBasketSums(BASKET_IDS[index]);
         toggleEmptyBasket(BASKET_IDS[index]);
     }
+}
+
+/** Rendert alle Gerichte, die mindestens einmal im Warenkorb liegen. */
+function renderBasketItems(basketId) {
+    const ITEMS_REF = document.getElementById(`${basketId}_items`);
+    let itemsHTML = "";
+
+    for (let indexMeal = 0; indexMeal < meals.length; indexMeal++) {
+        if (meals[indexMeal].amount > 0) {
+            itemsHTML += getBasketItemTemplate(indexMeal);
+        }
+    }
+
+    ITEMS_REF.innerHTML = itemsHTML;
+}
+
+/** Rendert die Summen eines Warenkorbs. */
+function renderBasketSums(basketId) {
+    const SUMS_REF = document.getElementById(`${basketId}_sums`);
+    let subtotal = getSubtotal();
+    let total = subtotal + DELIVERY_FEE;
+
+    SUMS_REF.innerHTML = getBasketSumsTemplate(subtotal, total);
 }
 
 /** Zeigt den leeren oder den gefüllten Warenkorb an. */
@@ -66,6 +92,47 @@ function toggleEmptyBasket(basketId) {
     } else {
         BASKET_REF.classList.remove("is_empty");
     }
+}
+
+/** Legt ein Gericht in den Warenkorb. */
+function addToBasket(indexMeal) {
+    meals[indexMeal].amount++;
+    updateMeal(indexMeal);
+}
+
+/** Aktualisiert alles, was von der Anzahl eines Gerichts abhängt. */
+function updateMeal(indexMeal) {
+    updateMealButton(indexMeal);
+    updateBaskets();
+}
+
+/** Zeigt am Gericht an, wie oft es im Warenkorb liegt. */
+function updateMealButton(indexMeal) {
+    const BUTTON_REF = document.getElementById(`meal_button_${indexMeal}`);
+
+    if (meals[indexMeal].amount > 0) {
+        BUTTON_REF.innerText = `Hinzugefügt: ${meals[indexMeal].amount}`;
+        BUTTON_REF.classList.add("added");
+    } else {
+        BUTTON_REF.innerText = "In den Warenkorb";
+        BUTTON_REF.classList.remove("added");
+    }
+}
+
+/** Gibt den Preis eines Gerichts mal Anzahl zurück. */
+function getMealSum(indexMeal) {
+    return meals[indexMeal].price * meals[indexMeal].amount;
+}
+
+/** Gibt die Summe aller Gerichte ohne Lieferkosten zurück. */
+function getSubtotal() {
+    let subtotal = 0;
+
+    for (let indexMeal = 0; indexMeal < meals.length; indexMeal++) {
+        subtotal += getMealSum(indexMeal);
+    }
+
+    return subtotal;
 }
 
 /** Gibt die Anzahl aller Gerichte im Warenkorb zurück. */

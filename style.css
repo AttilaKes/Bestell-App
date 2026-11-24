@@ -246,6 +246,10 @@ main {
     box-shadow: var(--shadow);
 }
 
+.add_button.added {
+    color: var(--color-primary-dark);
+}
+
 /* ========================================
    FOOTER
 ======================================== */

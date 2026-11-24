@@ -60,3 +60,62 @@
     gap: 24px;
     min-height: 0;
 }
+
+/* ===== Items ===== */
+.basket_items {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    padding-right: var(--spacing-small);
+    overflow-y: auto;
+    scrollbar-color: var(--color-rating) var(--color-basket);
+}
+
+.basket_item {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: var(--spacing-small);
+    padding: var(--spacing) 20px;
+    border-radius: var(--radius-basket-item);
+    color: var(--color-text);
+    background-color: var(--color-card);
+}
+
+.basket_item h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.basket_item .price {
+    font-size: 20px;
+}
+
+.basket_item_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+/* ===== Sums ===== */
+.basket_sums {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+    color: var(--color-on-primary);
+}
+
+.basket_sums p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--spacing-small);
+}
+
+.basket_sums .total {
+    padding-top: 12px;
+    border-top: 2px solid var(--color-on-primary);
+    font-size: 20px;
+}
