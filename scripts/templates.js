@@ -68,7 +68,7 @@ function getBasketTemplate(basketId) {
     `;
 }
 
-/** Gibt Zwischensumme, Lieferkosten und Gesamtsumme zurück. */
+/** Gibt Zwischensumme, Lieferkosten, Gesamtsumme und Bestell-Button zurück. */
 function getBasketSumsTemplate(subtotal, total) {
     return `
         <p><span>Zwischensumme</span><span>${formatPrice(subtotal)}</span></p>
@@ -76,6 +76,9 @@ function getBasketSumsTemplate(subtotal, total) {
         <p class="total">
             <strong>Gesamt</strong><strong>${formatPrice(total)}</strong>
         </p>
+        <button class="buy_button" onclick="placeOrder()">
+            Jetzt bestellen (${formatPrice(total)})
+        </button>
     `;
 }
 

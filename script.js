@@ -188,3 +188,39 @@ function getTotalAmount() {
 function formatPrice(price) {
     return price.toFixed(2).replace(".", ",") + " €";
 }
+
+/** Schickt die Testbestellung ab und leert den Warenkorb. */
+function placeOrder() {
+    emptyBasket();
+    openDialog("order_dialog");
+}
+
+/** Setzt die Anzahl aller Gerichte auf null. */
+function emptyBasket() {
+    for (let indexMeal = 0; indexMeal < meals.length; indexMeal++) {
+        meals[indexMeal].amount = 0;
+        updateMealButton(indexMeal);
+    }
+
+    updateBaskets();
+}
+
+/** Öffnet einen Dialog und hält die Seite dahinter fest. */
+function openDialog(dialogId) {
+    const DIALOG_REF = document.getElementById(dialogId);
+
+    DIALOG_REF.showModal();
+    document.body.classList.add("no_scroll");
+}
+
+/** Schließt einen Dialog. */
+function closeDialog(dialogId) {
+    const DIALOG_REF = document.getElementById(dialogId);
+
+    DIALOG_REF.close();
+}
+
+/** Gibt das Scrollen der Seite wieder frei. */
+function unlockScroll() {
+    document.body.classList.remove("no_scroll");
+}

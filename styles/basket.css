@@ -149,3 +149,82 @@
     border-top: 2px solid var(--color-on-primary);
     font-size: 20px;
 }
+
+.buy_button {
+    margin-top: var(--spacing);
+    padding: 12px var(--spacing);
+    border-radius: var(--radius-large);
+    font-size: 24px;
+    font-weight: 700;
+    background-color: var(--color-primary);
+}
+
+.buy_button:hover {
+    color: var(--color-primary-dark);
+    background-color: var(--color-card);
+}
+
+/* ========================================
+   DIALOGS
+======================================== */
+
+dialog {
+    border: none;
+    color: var(--color-on-basket);
+    background-color: var(--color-basket);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close_button {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.close_button:focus-visible,
+.buy_button:focus-visible {
+    outline-color: var(--color-on-basket);
+}
+
+/* ===== Order confirmation ===== */
+.order_dialog {
+    width: 426px;
+    max-width: 90vw;
+    margin: auto;
+    border-radius: var(--radius-large);
+}
+
+.order_dialog .dialog_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: 24px 32px 40px;
+    text-align: center;
+}
+
+.order_icon {
+    width: 88px;
+}
+
+.order_dialog h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.order_dialog p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.order_dialog .order_hint {
+    font-size: 18px;
+    font-weight: 400;
+}

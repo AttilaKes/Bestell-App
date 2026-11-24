@@ -105,5 +105,29 @@
                 <a href="./impressum.html#cookies">Cookies</a>
             </div>
         </footer>
+        <dialog
+            id="order_dialog"
+            class="order_dialog"
+            aria-labelledby="order_title"
+            onclick="closeDialog('order_dialog')"
+            onclose="unlockScroll()"
+        >
+            <div class="dialog_content" onclick="event.stopPropagation()">
+                <button
+                    class="close_button"
+                    onclick="closeDialog('order_dialog')"
+                >
+                    <img src="./assets/icons/close.svg" alt="Schließen" />
+                </button>
+                <img
+                    class="order_icon"
+                    src="./assets/icons/burger.svg"
+                    alt=""
+                />
+                <h2 id="order_title">Bestellung bestätigt!</h2>
+                <p>Dein Essen ist unterwegs.</p>
+                <p class="order_hint">Das war eine Testbestellung.</p>
+            </div>
+        </dialog>
     </body>
 </html>
