@@ -44,6 +44,72 @@ main {
     flex: 1;
 }
 
+/* ===== Restaurant ===== */
+.hero {
+    position: relative;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.hero_desktop {
+    display: block;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.restaurant_logo {
+    position: absolute;
+    left: 50%;
+    bottom: -80px;
+    transform: translateX(-50%);
+    width: 226px;
+    height: 226px;
+    padding: 13px;
+    border-radius: 50%;
+    background-color: var(--color-card);
+    box-shadow: var(--shadow);
+}
+
+.restaurant_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: 96px var(--spacing) 40px;
+    text-align: center;
+}
+
+.restaurant_title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.restaurant_title h1 {
+    font-family: "Palanquin Dark", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.restaurant_title h1 span {
+    color: var(--color-primary);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: 4px var(--spacing-small);
+    border-radius: 4px;
+    background-color: var(--color-rating);
+}
+
+.slogan {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 /* ========================================
    FOOTER
 ======================================== */
