@@ -46,3 +46,18 @@ function getMealTemplate(indexMeal) {
         </article>
     `;
 }
+
+/** Gibt das Grundgerüst eines Warenkorbs zurück. */
+function getBasketTemplate(basketId) {
+    return `
+        <h2>Dein Warenkorb</h2>
+        <div class="basket_empty">
+            <p>Noch nichts drin. Such dir etwas Leckeres aus!</p>
+            <img src="./assets/icons/shopping_cart.svg" alt="" />
+        </div>
+        <div class="basket_filled">
+            <ul id="${basketId}_items" class="basket_items"></ul>
+            <div id="${basketId}_sums" class="basket_sums"></div>
+        </div>
+    `;
+}

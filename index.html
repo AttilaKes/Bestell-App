@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="./styles/variables.css" />
         <link rel="stylesheet" href="./styles/standard.css" />
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./styles/basket.css" />
     </head>
 
     <body onload="init()" id="page_top">
@@ -74,8 +75,19 @@
                 <ul id="category_links"></ul>
             </nav>
 
-            <!-- renderCategories() renders the meals into this container -->
-            <div id="meal_content"></div>
+            <div class="menu">
+                <!-- renderCategories() renders the meals into this container -->
+                <div id="meal_content"></div>
+
+                <div class="basket_track">
+                    <!-- renderBaskets() renders the basket into this section -->
+                    <section
+                        id="basket_desktop"
+                        class="basket"
+                        aria-label="Warenkorb"
+                    ></section>
+                </div>
+            </div>
         </main>
 
         <footer>

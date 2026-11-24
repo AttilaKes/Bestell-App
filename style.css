@@ -132,6 +132,12 @@ main {
     box-shadow: var(--shadow);
 }
 
+/* ===== Menu ===== */
+.menu {
+    position: relative;
+    padding-bottom: 40px;
+}
+
 /* ===== Category ===== */
 .category {
     padding-top: calc(var(--headline-overhang) + var(--spacing));
