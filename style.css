@@ -110,6 +110,114 @@ main {
     font-weight: 700;
 }
 
+/* ===== Category ===== */
+.category {
+    padding-top: calc(var(--headline-overhang) + var(--spacing));
+}
+
+.category_headline {
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+}
+
+.category_headline_content {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--content-padding) 0 170px;
+}
+
+.category_headline_content img {
+    width: 88px;
+    height: 88px;
+    margin-top: calc(var(--headline-overhang) * -1);
+}
+
+.category_headline_content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: var(--headline-height);
+}
+
+.category_headline_content span {
+    font-weight: 400;
+}
+
+.meal_list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 24px calc(var(--basket-width) + 172px) 24px var(--content-padding);
+}
+
+/* ===== Meal card ===== */
+.meal_card {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    border-radius: var(--radius);
+    background-color: var(--color-card);
+}
+
+.meal_card:hover {
+    box-shadow: var(--shadow);
+}
+
+.meal_card img {
+    width: 207px;
+    height: 121px;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.meal_text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.meal_text h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.meal_text p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.meal_order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.add_button {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    background-color: var(--color-background);
+}
+
+.add_button:hover {
+    color: var(--color-primary-dark);
+    box-shadow: var(--shadow);
+}
+
 /* ========================================
    FOOTER
 ======================================== */
