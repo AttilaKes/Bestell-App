@@ -1,0 +1,19 @@
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* From here on the basket opens as a dialog. */
+@media (max-width: 1024px) {
+    .basket_track,
+    .menu_icon {
+        display: none;
+    }
+
+    .mobile_menu {
+        display: block;
+    }
+
+    .meal_list {
+        padding-right: var(--content-padding);
+    }
+}

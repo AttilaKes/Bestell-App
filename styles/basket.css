@@ -193,6 +193,42 @@ dialog::backdrop {
     outline-color: var(--color-on-basket);
 }
 
+/* ===== Mobile basket ===== */
+.basket_dialog {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90dvh;
+    margin: auto auto 0;
+    border-radius: var(--radius-large) var(--radius-large) 0 0;
+    animation: slide_in 0.3s ease-out;
+}
+
+.basket_dialog .dialog_content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90dvh;
+    padding: var(--spacing) 24px 32px;
+}
+
+.basket_dialog .basket {
+    gap: 24px;
+    min-height: 0;
+}
+
+.basket_dialog .basket_items {
+    max-height: 330px;
+}
+
+@keyframes slide_in {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 /* ===== Order confirmation ===== */
 .order_dialog {
     width: 426px;

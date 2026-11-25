@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="./styles/standard.css" />
         <link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./styles/basket.css" />
+        <link rel="stylesheet" href="./styles/responsive.css" />
     </head>
 
     <body onload="init()" id="page_top">
@@ -105,6 +106,51 @@
                 <a href="./impressum.html#cookies">Cookies</a>
             </div>
         </footer>
+
+        <nav class="mobile_menu" aria-label="Mobiles Menü">
+            <ul>
+                <li>
+                    <a href="#page_top">
+                        <img
+                            src="./assets/icons/home.svg"
+                            alt="Zum Seitenanfang"
+                        />
+                    </a>
+                </li>
+                <!-- profile and orders are placeholders, see Figma note -->
+                <li><img src="./assets/icons/profile.svg" alt="" /></li>
+                <li><img src="./assets/icons/orders.svg" alt="" /></li>
+                <li>
+                    <button onclick="openDialog('basket_dialog')">
+                        <img
+                            src="./assets/icons/shopping_cart.svg"
+                            alt="Warenkorb öffnen"
+                        />
+                        <span id="basket_bubble" class="basket_bubble"></span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <dialog
+            id="basket_dialog"
+            class="basket_dialog"
+            aria-label="Warenkorb"
+            onclick="closeDialog('basket_dialog')"
+            onclose="unlockScroll()"
+        >
+            <div class="dialog_content" onclick="event.stopPropagation()">
+                <button
+                    class="close_button"
+                    onclick="closeDialog('basket_dialog')"
+                >
+                    <img src="./assets/icons/close.svg" alt="Schließen" />
+                </button>
+                <!-- renderBaskets() renders the basket into this container -->
+                <div id="basket_mobile" class="basket"></div>
+            </div>
+        </dialog>
+
         <dialog
             id="order_dialog"
             class="order_dialog"

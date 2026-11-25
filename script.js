@@ -1,5 +1,5 @@
 const DELIVERY_FEE = 4.99;
-const BASKET_IDS = ["basket_desktop"];
+const BASKET_IDS = ["basket_desktop", "basket_mobile"];
 
 /** Startet die App: zeigt Kategorien, Gerichte und den Warenkorb. */
 function init() {
@@ -51,12 +51,28 @@ function renderBaskets() {
     updateBaskets();
 }
 
-/** Aktualisiert den Inhalt jedes Warenkorbs. */
+/** Aktualisiert beide Warenkörbe und die Zahl im mobilen Menü. */
 function updateBaskets() {
     for (let index = 0; index < BASKET_IDS.length; index++) {
         renderBasketItems(BASKET_IDS[index]);
         renderBasketSums(BASKET_IDS[index]);
         toggleEmptyBasket(BASKET_IDS[index]);
+    }
+
+    renderBasketBubble();
+}
+
+/** Zeigt die Anzahl aller Gerichte am Warenkorb-Symbol an. */
+function renderBasketBubble() {
+    const BUBBLE_REF = document.getElementById("basket_bubble");
+    let totalAmount = getTotalAmount();
+
+    BUBBLE_REF.innerText = totalAmount;
+
+    if (totalAmount === 0) {
+        BUBBLE_REF.classList.add("d_none");
+    } else {
+        BUBBLE_REF.classList.remove("d_none");
     }
 }
 
@@ -192,6 +208,7 @@ function formatPrice(price) {
 /** Schickt die Testbestellung ab und leert den Warenkorb. */
 function placeOrder() {
     emptyBasket();
+    closeDialog("basket_dialog");
     openDialog("order_dialog");
 }
 
@@ -220,7 +237,11 @@ function closeDialog(dialogId) {
     DIALOG_REF.close();
 }
 
-/** Gibt das Scrollen der Seite wieder frei. */
+/** Gibt das Scrollen wieder frei, außer die Bestätigung ist gerade offen. */
 function unlockScroll() {
-    document.body.classList.remove("no_scroll");
+    const ORDER_DIALOG_REF = document.getElementById("order_dialog");
+
+    if (!ORDER_DIALOG_REF.open) {
+        document.body.classList.remove("no_scroll");
+    }
 }
