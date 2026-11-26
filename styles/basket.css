@@ -7,9 +7,8 @@
     position: absolute;
     top: calc(var(--headline-overhang) + var(--spacing) + 54px);
     bottom: 40px;
-    left: 50%;
+    right: max(0px, calc(50% - var(--content-width) / 2));
     width: var(--basket-width);
-    margin-left: calc(var(--content-width) / 2 - var(--basket-width));
 }
 
 .basket_track .basket {
@@ -263,4 +262,55 @@ dialog::backdrop {
 .order_dialog .order_hint {
     font-size: 18px;
     font-weight: 400;
+}
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile_menu {
+    display: none;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-basket);
+}
+
+.mobile_menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 78px;
+}
+
+.mobile_menu img {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.mobile_menu a,
+.mobile_menu button {
+    display: block;
+    position: relative;
+    padding: var(--spacing-small);
+}
+
+.mobile_menu a:focus-visible,
+.mobile_menu button:focus-visible {
+    outline-color: var(--color-on-basket);
+}
+
+.basket_bubble {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    min-width: 26px;
+    padding: 0 6px;
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    color: var(--color-on-primary);
+    background-color: var(--color-primary-dark);
 }

@@ -2,6 +2,21 @@
    RESPONSIVE DESIGN
 ======================================== */
 
+@media (max-width: 1300px) {
+    :root {
+        --content-padding: 40px;
+        --basket-width: 380px;
+    }
+
+    .category_headline_content {
+        padding-left: 64px;
+    }
+
+    .meal_list {
+        padding-right: calc(var(--basket-width) + 40px);
+    }
+}
+
 /* From here on the basket opens as a dialog. */
 @media (max-width: 1024px) {
     .basket_track,
@@ -15,5 +30,116 @@
 
     .meal_list {
         padding-right: var(--content-padding);
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --content-padding: 16px;
+        --headline-overhang: 40px;
+    }
+
+    .header_content {
+        min-height: 80px;
+    }
+
+    .bestellapp_logo {
+        width: 115px;
+    }
+
+    .hero {
+        margin: var(--spacing);
+    }
+
+    .hero_desktop {
+        display: none;
+    }
+
+    .hero_mobile {
+        display: block;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--radius);
+    }
+
+    .restaurant_logo {
+        bottom: -73px;
+        width: 146px;
+        height: 146px;
+    }
+
+    .restaurant_info {
+        padding-top: 88px;
+        padding-bottom: 24px;
+    }
+
+    .restaurant_title {
+        flex-direction: column-reverse;
+        gap: var(--spacing);
+    }
+
+    .restaurant_title h1 {
+        font-size: 40px;
+    }
+
+    .slogan {
+        font-size: 20px;
+    }
+
+    .category_headline_content {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0 var(--content-padding);
+    }
+
+    .category_headline_content img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .category_headline_content h2 {
+        font-size: 28px;
+        line-height: 44px;
+    }
+
+    .meal_list {
+        gap: 20px;
+    }
+
+    .meal_card {
+        flex-direction: column;
+    }
+
+    .meal_card img {
+        width: 100%;
+    }
+
+    .meal_order {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .copyright {
+        order: 1;
+    }
+}
+
+@media (max-width: 400px) {
+    .add_button {
+        padding: 6px 8px;
+    }
+
+    .basket_dialog .dialog_content {
+        padding-left: var(--spacing);
+        padding-right: var(--spacing);
+    }
+
+    .buy_button {
+        font-size: 20px;
     }
 }
